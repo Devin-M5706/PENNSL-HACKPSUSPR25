@@ -1,0 +1,248 @@
+/* HACKPSU Theme Colors */
+:root {
+  --primary-color: #1e88e5;
+  --secondary-color: #ff4081;
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --text-color: #ffffff;
+  --accent-color: #00e5ff;
+  
+  /* Pokemon Theme Colors */
+  --pokeball-red: #ee1515;
+  --pokeball-white: #f0f0f0;
+  --pokeball-black: #222224;
+
+  /* PennSL Theme Colors */
+  --hackpsu-blue: #1e3a8a;
+  --hackpsu-white: #ffffff;
+  --hackpsu-gold: #ffd700;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--hackpsu-blue);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* App Title */
+.app-title {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.app-title h1 {
+  font-size: 4rem;
+  color: var(--hackpsu-gold);
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.app-title p {
+  font-size: 1.5rem;
+  color: var(--hackpsu-white);
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Animated Background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+  }
+}
+
+.sign-language-translator {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.camera-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* Mirror the video */
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1); /* Mirror the canvas to match video */
+  pointer-events: none;
+}
+
+.debug-info {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  color: #00ff87;
+  font-family: monospace;
+  font-size: 14px;
+  z-index: 10;
+}
+
+.debug-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.translation-display {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.translation-display h2 {
+  font-size: 72px;
+  margin: 0;
+  color: #333;
+}
+
+.confidence-bar {
+  width: 100%;
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: var(--hackpsu-blue);
+  transition: width 0.3s ease;
+}
+
+.confidence-text {
+  color: #666;
+  margin: 5px 0;
+}
+
+.letter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  max-height: calc(100vh - 300px);
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.letter-card {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.letter-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.letter-card.active {
+  background: var(--hackpsu-gold);
+  color: var(--hackpsu-blue);
+  transform: scale(1.05);
+}
+
+.letter-card h3 {
+  font-size: 28px;
+  margin: 0 0 8px 0;
+  color: var(--hackpsu-blue);
+}
+
+.letter-card.active h3 {
+  color: var(--hackpsu-blue);
+}
+
+.letter-card p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .app-title h1 {
+    font-size: 3rem;
+  }
+  
+  .app-title p {
+    font-size: 1.2rem;
+  }
+  
+  .translation-display h2 {
+    font-size: 48px;
+  }
+} 

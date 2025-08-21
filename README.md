@@ -4,6 +4,10 @@ A fullstack web application that translates sign language to text using computer
 
 ## Features
 
+
+https://github.com/user-attachments/assets/f3dd342c-5fd6-416e-a2b6-cfe22e99bd22
+
+
 - Real-time webcam capture
 - Sign language recognition using MediaPipe
 - Modern React frontend with Tailwind CSS

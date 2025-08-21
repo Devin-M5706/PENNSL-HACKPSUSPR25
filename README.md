@@ -2,11 +2,11 @@
 
 A fullstack web application that translates sign language to text using computer vision and machine learning.
 
+
+https://github.com/user-attachments/assets/de1f11cd-d656-43e7-9e70-cbcc640aa531
+
+
 ## Features
-
-
-https://github.com/user-attachments/assets/f3dd342c-5fd6-416e-a2b6-cfe22e99bd22
-
 
 - Real-time webcam capture
 - Sign language recognition using MediaPipe
